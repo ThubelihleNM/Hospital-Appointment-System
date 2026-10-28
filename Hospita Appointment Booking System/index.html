@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Book appointments with trusted doctors at CarePoint Hospital.">
+  <title>CarePoint | Hospital Appointment Booking</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="announcement"><span class="pulse"></span> Your health, our priority <span class="announcement-right">Emergency? Call <strong>+91 98765 43210</strong></span></div>
+  <header class="site-header">
+    <a class="brand" href="#home" aria-label="CarePoint home"><span class="brand-mark">✚</span><span>CarePoint<span class="brand-sub">MULTISPECIALITY HOSPITAL</span></span></a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Open navigation">☰</button>
+    <nav id="mainNav">
+      <a class="nav-link active" href="#home">Home</a>
+      <a class="nav-link" href="#doctors">Find a Doctor</a>
+      <a class="nav-link" href="#how-it-works">How It Works</a>
+      <a class="nav-link" href="#appointments">My Appointments <span class="nav-count" id="navCount">0</span></a>
+      <button class="auth-nav-btn" id="signInOpen">Sign in</button>
+      <button class="btn btn-primary nav-cta" id="signUpOpen">Sign up <span>↗</span></button>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-copy">
+        <div class="eyebrow"><span class="eyebrow-line"></span> CARE THAT COMES FIRST</div>
+        <h1>Better health starts with <span>the right doctor.</span></h1>
+        <p class="hero-description">Find trusted specialists, choose a time that works for you, and book your appointment in just a few clicks.</p>
+        <div class="hero-actions"><a class="btn btn-primary btn-large" href="#doctors">Find your doctor <span>→</span></a><a class="text-link" href="#how-it-works"><span class="play-icon">▶</span> How it works</a></div>
+        <div class="trust-row">
+          <div class="avatar-stack"><span>👩🏽‍⚕️</span><span>👨🏻‍⚕️</span><span>👩🏼‍⚕️</span><span>+</span></div>
+          <div><strong>Experienced care team</strong><small>Here for you, every step of the way</small></div>
+        </div>
+      </div>
+      <div class="hero-visual">
+        <div class="hero-blob"></div>
+        <img class="hero-doctor" src="https://images.unsplash.com/photo-1559839734-2b71ea197ec2?auto=format&fit=crop&w=1000&q=85" alt="Doctor in a white coat smiling">
+        <div class="floating-card card-availability"><span class="floating-icon">✓</span><div><strong>Easy online booking</strong><small>Choose your preferred time</small></div></div>
+        <div class="floating-card card-rating"><span class="rating-star">★</span><div><strong>4.9/5 patient rating</strong><small>Trusted by our community</small></div></div>
+        <div class="hero-decoration">✚</div>
+      </div>
+      <div class="hero-bottom">
+        <div><span class="stat-number">25+</span><span class="stat-label">Specialist doctors</span></div>
+        <div><span class="stat-number">12</span><span class="stat-label">Medical departments</span></div>
+        <div><span class="stat-number">24/7</span><span class="stat-label">Emergency support</span></div>
+        <div class="hero-bottom-note"><span class="green-dot"></span> Compassionate care, close to home</div>
+      </div>
+    </section>
+
+    <section class="booking-strip" aria-label="Search doctors">
+      <div class="search-intro"><span class="search-symbol">⌕</span><div><strong>Find the care you need</strong><small>Search by doctor or specialty</small></div></div>
+      <div class="search-field"><label for="heroSearch">Doctor or specialty</label><input id="heroSearch" type="search" placeholder="e.g. Cardiologist"></div>
+      <div class="search-field"><label for="heroSpecialty">Department</label><select id="heroSpecialty"><option value="">All departments</option></select></div>
+      <button class="btn btn-primary search-button" id="searchButton">Search doctors <span>→</span></button>
+    </section>
+
+    <section class="section doctors-section" id="doctors">
+      <div class="section-heading">
+        <div><div class="eyebrow"><span class="eyebrow-line"></span> MEET OUR EXPERTS</div><h2>Find your <span>specialist.</span></h2><p>Experienced professionals who put your wellbeing first.</p></div>
+        <a href="#appointments" class="text-link">View my appointments <span>→</span></a>
+      </div>
+      <div class="doctor-controls">
+        <div class="filter-pills" id="filterPills"><button class="filter-pill selected" data-filter="">All doctors</button></div>
+        <div class="doctor-search"><span>⌕</span><input id="doctorSearch" type="search" placeholder="Search doctors..."></div>
+      </div>
+      <div class="results-line"><span id="resultsCount">Showing all doctors</span><span class="demo-label">DEMO DOCTOR DIRECTORY</span></div>
+      <div class="doctor-grid" id="doctorGrid"></div>
+      <div class="empty-state hidden" id="emptyState"><span>⌕</span><h3>No doctors found</h3><p>Try a different name or department.</p><button class="btn btn-outline" id="resetSearch">Clear filters</button></div>
+    </section>
+
+    <section class="how-section" id="how-it-works">
+      <div class="section-heading centered"><div><div class="eyebrow"><span class="eyebrow-line"></span> SIMPLE & CONVENIENT</div><h2>Care in <span>three easy steps.</span></h2><p>Spend less time arranging care and more time feeling better.</p></div></div>
+      <div class="steps-grid">
+        <article class="step-card"><div class="step-number">01</div><div class="step-icon">⌕</div><h3>Find your doctor</h3><p>Browse our demo directory and choose a specialist for your needs.</p></article>
+        <article class="step-card"><div class="step-number">02</div><div class="step-icon">▦</div><h3>Choose a time</h3><p>Select an available date and appointment slot that suits your schedule.</p></article>
+        <article class="step-card"><div class="step-number">03</div><div class="step-icon">✓</div><h3>You're booked</h3><p>Review your booking confirmation and manage appointments below.</p></article>
+      </div>
+    </section>
+
+    <section class="appointments-section section" id="appointments">
+      <div class="section-heading"><div><div class="eyebrow"><span class="eyebrow-line"></span> YOUR HEALTH, ORGANIZED</div><h2>My <span>appointments.</span></h2><p>Your bookings are saved in this browser on this device.</p></div><span class="appointment-total" id="appointmentTotal">0 bookings</span></div>
+      <div class="appointments-list" id="appointmentsList"></div>
+      <div class="empty-appointments" id="emptyAppointments"><div class="empty-calendar">▦</div><h3>No appointments yet</h3><p>When you book a doctor, your appointment will appear here.</p><a class="btn btn-primary" href="#doctors">Browse doctors <span>→</span></a></div>
+    </section>
+
+    <section class="cta-section">
+      <div class="cta-symbol">✚</div><div><h2>Your wellbeing deserves attention.</h2><p>Take the first step. Find a specialist and schedule a visit today.</p></div><a class="btn btn-light" href="#doctors">Book a visit <span>→</span></a>
+    </section>
+  </main>
+
+  <footer class="site-footer"><a class="brand footer-brand" href="#home"><span class="brand-mark">✚</span><span>CarePoint<span class="brand-sub">MULTISPECIALITY HOSPITAL</span></span></a><p>Demo website for educational purposes. Doctor profiles and appointments are illustrative, not real medical services.</p><div class="footer-bottom"><span>© <span id="year"></span> CarePoint Hospital Demo</span><a href="#home">Back to top ↑</a></div></footer>
+
+  <div class="modal-backdrop hidden" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+    <div class="booking-modal auth-modal">
+      <button class="modal-close" id="closeAuthModal" aria-label="Close account form">×</button>
+      <div class="modal-kicker">CAREPOINT ACCOUNT</div>
+      <h2 id="authTitle">Welcome back</h2>
+      <p class="modal-description" id="authDescription">Sign in to view your saved demo appointments.</p>
+      <div class="auth-tabs"><button type="button" class="auth-tab selected" id="authTabSignIn">Sign in</button><button type="button" class="auth-tab" id="authTabSignUp">Create account</button></div>
+      <form id="authForm">
+        <div class="form-field" id="authNameField"><label for="authName">Full name *</label><input id="authName" name="authName" minlength="2" maxlength="80" placeholder="Your full name"></div>
+        <div class="form-field auth-form-field"><label for="authEmail">Email address *</label><input id="authEmail" name="authEmail" type="email" required maxlength="120" placeholder="you@example.com"></div>
+        <div class="form-field auth-form-field"><label for="authPassword">Password *</label><div class="password-wrap"><input id="authPassword" name="authPassword" type="password" required minlength="6" maxlength="100" placeholder="At least 6 characters"><button type="button" id="togglePassword">Show</button></div></div>
+        <p class="form-note" id="authNote">Demo accounts are stored in this browser only. Do not use a real password.</p>
+        <button class="btn btn-primary submit-booking" id="authSubmit" type="submit">Sign in <span>→</span></button>
+      </form>
+      <p class="auth-switch" id="authSwitchText">New to CarePoint? <button type="button" id="switchToSignUp">Create an account</button></p>
+    </div>
+  </div>
+
+  <div class="modal-backdrop hidden" id="bookingModal" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="booking-modal">
+      <button class="modal-close" id="closeModal" aria-label="Close booking form">×</button>
+      <div class="modal-kicker">APPOINTMENT REQUEST</div><h2 id="modalTitle">Book your visit</h2><p class="modal-description" id="modalDoctorDescription">Choose a suitable date and time.</p>
+      <div class="selected-doctor" id="selectedDoctor"></div>
+      <form id="bookingForm">
+        <input type="hidden" id="doctorId">
+        <div class="form-grid">
+          <div class="form-field full"><label for="patientName">Full name *</label><input id="patientName" name="patientName" required minlength="2" maxlength="80" placeholder="Enter your full name"></div>
+          <div class="form-field"><label for="patientEmail">Email address *</label><input id="patientEmail" name="patientEmail" type="email" required maxlength="120" placeholder="you@example.com"></div>
+          <div class="form-field"><label for="patientPhone">Phone number *</label><input id="patientPhone" name="patientPhone" type="tel" required pattern="[0-9+() -]{7,20}" placeholder="+91 98765 43210"></div>
+          <div class="form-field"><label for="appointmentDate">Appointment date *</label><input id="appointmentDate" name="appointmentDate" type="date" required></div>
+          <div class="form-field"><label for="appointmentTime">Available time *</label><select id="appointmentTime" name="appointmentTime" required><option value="">Select a time</option></select></div>
+          <div class="form-field full"><label for="appointmentReason">Reason for visit (optional)</label><textarea id="appointmentReason" name="appointmentReason" rows="2" maxlength="500" placeholder="Briefly describe what you need help with"></textarea></div>
+        </div>
+        <p class="form-note">This demo stores booking details only in your browser. Do not enter sensitive medical information.</p>
+        <button class="btn btn-primary submit-booking" type="submit">Confirm appointment <span>→</span></button>
+      </form>
+    </div>
+  </div>
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  <script src="script.js"></script>
+</body>
+</html>
